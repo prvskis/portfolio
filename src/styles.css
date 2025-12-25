@@ -1,5 +1,193 @@
 @import "tailwindcss";
 
+/* =========================
+   COLOR TOKENS (SAFE RGB)
+   ========================= */
+:root {
+  --bg0: 6, 10, 22;       /* near-black navy */
+  --bg1: 8, 18, 40;       /* deep navy */
+  --card: 10, 22, 48;     /* card base */
+
+  --text: 235, 242, 255;  /* main text */
+  --muted: 170, 190, 220; /* secondary text */
+
+  --cyan: 74, 210, 255;
+  --blue: 54, 120, 255;
+  --magenta: 255, 87, 179;
+  --coral: 255, 138, 92;
+  --gold: 240, 200, 120;
+}
+
+/* =========================
+   BASE
+   ========================= */
 html {
   scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: rgb(var(--text));
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+
+  background:
+    radial-gradient(
+      1200px 800px at 50% -10%,
+      rgba(var(--blue), 0.18),
+      rgba(var(--bg1), 0.20) 35%,
+      rgb(var(--bg0)) 70%
+    ),
+    radial-gradient(
+      900px 700px at 12% 28%,
+      rgba(var(--cyan), 0.11),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 700px at 88% 22%,
+      rgba(var(--magenta), 0.10),
+      transparent 60%
+    ),
+    rgb(var(--bg0));
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   UTILITIES (TAILWIND LAYER)
+   ========================= */
+@layer utilities {
+  /* layout */
+  .container-x {
+    @apply mx-auto max-w-6xl px-6 md:px-10;
+  }
+
+  /* thin border */
+  .hairline {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* glass / frosted panel */
+  .glass {
+    background: rgba(10, 18, 40, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(14px);
+  }
+
+  /* card */
+  .card {
+    @apply rounded-2xl border;
+    border-color: rgba(255, 255, 255, 0.12);
+
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+
+    box-shadow:
+      0 14px 44px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* typography */
+  .title-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    letter-spacing: -0.02em;
+  }
+
+  .label {
+    @apply text-xs uppercase tracking-[0.28em];
+    color: rgba(var(--gold), 0.88);
+  }
+
+  .muted {
+    color: rgba(var(--text), 0.72);
+  }
+
+  .muted2 {
+    color: rgba(var(--text), 0.56);
+  }
+
+  /* background grid texture */
+  .gridlines {
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+      );
+    background-size: 56px 56px;
+    mask-image: radial-gradient(
+      circle at 50% 40%,
+      rgba(0, 0, 0, 0.75),
+      transparent 65%
+    );
+  }
+}
+
+@layer utilities {
+  @keyframes drift1 {
+    0%   { transform: translate3d(-10%, -8%, 0) scale(1); }
+    50%  { transform: translate3d(8%, 6%, 0) scale(1.08); }
+    100% { transform: translate3d(-10%, -8%, 0) scale(1); }
+  }
+
+  @keyframes drift2 {
+    0%   { transform: translate3d(6%, -6%, 0) scale(1); }
+    50%  { transform: translate3d(-8%, 10%, 0) scale(1.1); }
+    100% { transform: translate3d(6%, -6%, 0) scale(1); }
+  }
+
+  @keyframes drift3 {
+    0%   { transform: translate3d(0%, 10%, 0) scale(1); }
+    50%  { transform: translate3d(10%, -6%, 0) scale(1.06); }
+    100% { transform: translate3d(0%, 10%, 0) scale(1); }
+  }
+
+  /* animated blob layers */
+  .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.55;
+    will-change: transform;
+    transform: translate3d(0,0,0);
+  }
+
+  .blob-1 { animation: drift1 10s ease-in-out infinite; }
+  .blob-2 { animation: drift2 14s ease-in-out infinite; }
+  .blob-3 { animation: drift3 18s ease-in-out infinite; }
+
+  /* subtle grain */
+  .grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+
+  /* respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .blob-1, .blob-2, .blob-3 { animation: none !important; }
+  }
 }

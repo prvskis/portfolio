@@ -3,18 +3,46 @@ import Reveal from "../components/Reveal";
 
 export default function About() {
   return (
-    <Section id="about" className="flex items-center">
-      <div className="w-full">
-        <Reveal>
-          <h2 className="text-3xl font-semibold md:text-4xl">About</h2>
-        </Reveal>
-        <Reveal delayMs={80}>
-          <p className="mt-5 max-w-xl text-white/70">
-            About section content goes here.
-          </p>
-        </Reveal>
+    <Section id="about" center>
+      <div className="grid gap-8 md:grid-cols-12 md:items-start">
+        <div className="md:col-span-5">
+          <Reveal>
+            <div className="label mb-4">ABOUT</div>
+          </Reveal>
+          <Reveal delayMs={80}>
+            <h2 className="title-serif text-3xl md:text-4xl">
+              A simple story,
+              <br />
+              built with taste.
+            </h2>
+          </Reveal>
+        </div>
+
+        <div className="md:col-span-7">
+          <Reveal delayMs={140}>
+            <div className="card p-6 md:p-8">
+              <p className="muted leading-relaxed">
+                Mình tập trung vào UI sạch, cấu trúc rõ ràng, và animation tinh tế theo
+                scroll. Bạn có thể thay block này bằng intro của bạn, tech stack, hoặc
+                journey.
+              </p>
+
+              <div className="mt-6 grid gap-3 md:grid-cols-2">
+                {[
+                  "React + TypeScript",
+                  "TailwindCSS styling",
+                  "Scroll-based animation",
+                  "Responsive layout",
+                ].map((t) => (
+                  <div key={t} className="rounded-xl border hairline bg-white/5 px-4 py-3 text-sm text-white/80">
+                    {t}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </Section>
   );
 }
-

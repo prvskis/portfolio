@@ -1,21 +1,30 @@
-import type { PropsWithChildren } from "react";
 import clsx from "clsx";
+import type { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
   id: string;
   className?: string;
+  center?: boolean;
 }>;
 
-export default function Section({ id, className, children }: Props) {
+export default function Section({
+  id,
+  className,
+  center = false,
+  children,
+}: Props) {
   return (
     <section
       id={id}
       className={clsx(
-        "min-h-screen scroll-mt-20 px-6 py-20 md:px-10",
+        "relative min-h-screen scroll-mt-24",
+        center ? "flex items-center py-0" : "py-0",
         className
       )}
     >
-      {children}
+      <div className="container-x relative z-10 w-full">
+        {children}
+      </div>
     </section>
   );
 }
