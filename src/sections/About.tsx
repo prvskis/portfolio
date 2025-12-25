@@ -22,9 +22,8 @@ export default function About() {
           <Reveal delayMs={140}>
             <div className="card p-6 md:p-8">
               <p className="muted leading-relaxed">
-                Mình tập trung vào UI sạch, cấu trúc rõ ràng, và animation tinh tế theo
-                scroll. Bạn có thể thay block này bằng intro của bạn, tech stack, hoặc
-                journey.
+              With a passion for programming, I’m a disciplined and detail-oriented third-year college student at UIT-HCM VNU that hope to make life more convenient with apps and automation.
+              Currently, I'm working on a project called "XYZ Project" to help me learn more about programming and build my own projects.
               </p>
 
               <div className="mt-6 grid gap-3 md:grid-cols-2">

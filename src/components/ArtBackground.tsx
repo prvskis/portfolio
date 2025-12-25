@@ -10,7 +10,7 @@ export default function ArtBackground() {
             width: "520px",
             height: "520px",
             background:
-              "radial-gradient(circle at 30% 30%, rgba(74,210,255,0.28), transparent 60%)",
+              "radial-gradient(circle at 10% 10%, rgba(74,210,255,0.28), transparent 20%)",
           }}
         />
         <div
@@ -32,7 +32,7 @@ export default function ArtBackground() {
             width: "700px",
             height: "700px",
             background:
-              "radial-gradient(circle at 50% 50%, rgba(54,120,255,0.18), transparent 65%)",
+              "radial-gradient(circle at 80% 80%, rgba(54,120,255,0.18), transparent 80%)",
           }}
         />
   
