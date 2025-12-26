@@ -369,6 +369,19 @@ html.light nav button.text-black {
   color: rgb(var(--bg0)) !important;
 }
 
+/* Navbar pill indicator in light mode */
+html.light nav .absolute.rounded-full.bg-white {
+  background-color: rgb(var(--text)) !important;
+}
+
+html.light nav button.text-black {
+  color: rgb(var(--bg0)) !important;
+}
+
+html.light nav button[aria-current="page"].text-black {
+  color: rgb(var(--bg0)) !important;
+}
+
 /* ProfileFrame specific light mode adjustments */
 html.light .bg-white\/5 {
   background-color: rgba(var(--text), 0.03) !important;
@@ -500,4 +513,43 @@ html.light .group-hover\:text-white.group-hover\:text-white {
 html.light .bg-white\/5.text-white\/80 {
   color: rgba(var(--text), 0.75) !important;
   background-color: rgba(var(--text), 0.04) !important;
+}
+
+/* Button fixes for light mode */
+html.light button.bg-white\/5,
+html.light a.bg-white\/5 {
+  background-color: rgba(var(--text), 0.08) !important;
+  border-color: rgba(var(--text), 0.15) !important;
+  color: rgb(var(--text)) !important;
+}
+
+html.light button.bg-white\/5:hover,
+html.light a.bg-white\/5:hover {
+  background-color: rgba(var(--text), 0.15) !important;
+  border-color: rgba(var(--text), 0.25) !important;
+}
+
+html.light .bg-white\/5.text-white\/80,
+html.light .bg-white\/5.text-white\/75 {
+  color: rgb(var(--text)) !important;
+}
+
+/* Hero section buttons in light mode */
+html.light .bg-white.text-black {
+  background-color: rgb(var(--text)) !important;
+  color: rgb(var(--bg0)) !important;
+}
+
+html.light .bg-white.text-black:hover {
+  background-color: rgba(var(--text), 0.9) !important;
+}
+
+html.light .border.hairline.text-white\/80 {
+  border-color: rgba(var(--text), 0.20) !important;
+  color: rgb(var(--text)) !important;
+}
+
+html.light .border.hairline.text-white\/80:hover {
+  background-color: rgba(var(--text), 0.08) !important;
+  border-color: rgba(var(--text), 0.30) !important;
 }

@@ -101,6 +101,13 @@ const theme = createTheme({
               backgroundColor: "rgba(255, 255, 255, 0.10)",
             },
           },
+          "&.MuiButton-contained": {
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
+            color: "rgb(235, 242, 255)",
+            "&:hover": {
+              backgroundColor: "rgba(255, 255, 255, 0.25)",
+            },
+          },
         },
       },
     },
@@ -161,6 +168,17 @@ const theme = createTheme({
         option: {
           "&:hover": {
             backgroundColor: "rgba(255, 255, 255, 0.10)",
+          },
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: "rgba(255, 255, 255, 0.70)",
+          "&:hover": {
+            backgroundColor: "rgba(255, 255, 255, 0.10)",
+            color: "rgb(255, 255, 255)",
           },
         },
       },
@@ -253,12 +271,83 @@ const lightTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          borderRadius: "0.75rem",
+          "&.MuiButton-outlined": {
+            borderColor: "rgba(18, 22, 32, 0.25)",
+            color: "rgb(18, 22, 32)",
+            backgroundColor: "rgba(18, 22, 32, 0.03)",
+            "&:hover": {
+              borderColor: "rgba(18, 22, 32, 0.40)",
+              backgroundColor: "rgba(18, 22, 32, 0.08)",
+            },
+          },
+          "&.MuiButton-contained": {
+            backgroundColor: "rgb(18, 22, 32)",
+            color: "rgb(248, 249, 252)",
+            "&:hover": {
+              backgroundColor: "rgb(28, 32, 42)",
+            },
+          },
+          "&.MuiButton-outlined.MuiButton-colorError": {
+            borderColor: "rgba(211, 47, 47, 0.6)",
+            color: "rgb(211, 47, 47)",
+            backgroundColor: "rgba(211, 47, 47, 0.05)",
+            "&:hover": {
+              borderColor: "rgb(211, 47, 47)",
+              backgroundColor: "rgba(211, 47, 47, 0.12)",
+            },
+          },
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: "rgba(18, 22, 32, 0.70)",
+          "&:hover": {
+            backgroundColor: "rgba(18, 22, 32, 0.08)",
+            color: "rgb(18, 22, 32)",
+          },
+        },
+      },
+    },
     MuiChip: {
       styleOverrides: {
         root: {
           backgroundColor: "rgba(18, 22, 32, 0.04)",
           border: "1px solid rgba(18, 22, 32, 0.12)",
           color: "rgba(18, 22, 32, 0.70)",
+        },
+      },
+    },
+    MuiPagination: {
+      styleOverrides: {
+        root: {
+          "& .MuiPaginationItem-root": {
+            color: "rgba(18, 22, 32, 0.65)",
+            "&.Mui-selected": {
+              backgroundColor: "rgba(18, 22, 32, 0.12)",
+              color: "rgb(18, 22, 32)",
+            },
+          },
+        },
+      },
+    },
+    MuiAutocomplete: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          backdropFilter: "blur(16px)",
+          border: "1px solid rgba(18, 22, 32, 0.10)",
+        },
+        option: {
+          "&:hover": {
+            backgroundColor: "rgba(18, 22, 32, 0.08)",
+          },
         },
       },
     },
